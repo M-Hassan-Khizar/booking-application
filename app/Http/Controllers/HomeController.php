@@ -59,9 +59,13 @@ return redirect()->back()->with('message', 'Appointment Request Successfull. we 
 public function myappointment(){
     if(Auth::id())
     {
-$userid=Auth::user()->id;
-$appoint=appointment::where('user_id',$userid)->get();
-        return view('user.myappointment',compact('appoint'));
+        if(Auth::user()->usertype==0)
+        {
+            $userid=Auth::user()->id;
+            $appoint=appointment::where('user_id',$userid)->get();
+                    return view('user.myappointment',compact('appoint'));
+        }
+
     }
     else{
         return redirect()->back();

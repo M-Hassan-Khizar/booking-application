@@ -50,7 +50,7 @@
 
     <nav class="shadow-sm navbar navbar-expand-lg navbar-light">
       <div class="container">
-        <a class="navbar-brand" href="#"><span class="text-primary">One</span>-Health</a>
+        <a class="navbar-brand" href="{{  url('/')}}"><span class="text-primary">One</span>-Health</a>
 
         <form action="#">
           <div class="input-group input-navbar">
@@ -87,10 +87,11 @@
             @auth
             <li class="nav-item">
                 <a class="nav-link" style="background-color: purple; color:white;" href="{{  url('myappointment')}}">My Appointment</a>
-              </li>
-            {{-- <x-app-layout>
 
-            </x-app-layout> --}}
+              </li>
+              {{-- <x-app-layout>
+
+              </x-app-layout> --}}
              @else
 
             <li class="nav-item">
