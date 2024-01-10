@@ -32,9 +32,11 @@
                 </div>
                 @endif
 
-                <form action="{{ url('upload_doctor') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ url('upload_doctor') }}" method="POST" enctype="multipart/form-data" style="background-color: gray" >
+
+
                     @csrf
-                    <div style="padding-top: 15px;">
+                    <div style="padding-top: 15px;" >
                         <label>Doctor Name</label>
                         <input type ="text" style="color:black" name="doctor_name" placeholder="write the Name" required="">
                     </div>

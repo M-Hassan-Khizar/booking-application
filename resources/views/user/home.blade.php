@@ -8,7 +8,7 @@
 
   <meta name="copyright" content="MACode ID, https://macodeid.com/">
 
-  <title>One Health - Medical Center HTML5 Template</title>
+  <title>Medical Center</title>
 
   <link rel="stylesheet" href="../assets/css/maicons.css">
 
@@ -66,7 +66,7 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupport">
-          <ul class="ml-auto navbar-nav">
+          <ul class="ml-auto navbar-nav" >
             <li class="nav-item active">
               <a class="nav-link" href="index.html">Home</a>
             </li>
@@ -85,9 +85,12 @@
 
             @if(Route::has('login'))
             @auth
-            <x-app-layout>
+            <li class="nav-item">
+                <a class="nav-link" style="background-color: purple; color:white;" href="{{  url('myappointment')}}">My Appointment</a>
+              </li>
+            {{-- <x-app-layout>
 
-            </x-app-layout>
+            </x-app-layout> --}}
              @else
 
             <li class="nav-item">
@@ -244,6 +247,7 @@
 <script src="../assets/vendor/wow/wow.min.js"></script>
 
 <script src="../assets/js/theme.js"></script>
+
 
 </body>
 </html>

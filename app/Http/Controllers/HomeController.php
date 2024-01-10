@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Doctor;
 use App\Models\Appointment;
 
+
 class HomeController extends Controller
 {
     public function redirect()
@@ -54,5 +55,22 @@ public function appointment(Request $request) {
     }
 $data->save();
 return redirect()->back()->with('message', 'Appointment Request Successfull. we will contact with you soon');
+}
+public function myappointment(){
+    if(Auth::id())
+    {
+$userid=Auth::user()->id;
+$appoint=appointment::where('user_id',$userid)->get();
+        return view('user.myappointment',compact('appoint'));
+    }
+    else{
+        return redirect()->back();
+    }
+
+}
+public function cancel_appoint($id){
+   $data=appointment::find($id);
+   $data->delete();
+   return redirect()->back();
 }
 }
